@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout with Flexbox & Grid</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">Responsive Layout</div>
+            <nav>
+                <button class="menu-toggle">☰</button>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Welcome to Our Responsive Website</h1>
+            <p>This layout demonstrates the power of Flexbox and CSS Grid for creating responsive designs.</p>
+        </section>
+
+        <main>
+            <h2>Latest Articles</h2>
+            <div class="articles">
+                <article class="card">
+                    <img src="https://via.placeholder.com/400x200" alt="Article Image">
+                    <div class="card-content">
+                        <h3>Understanding CSS Grid</h3>
+                        <p>Learn how to create complex layouts with CSS Grid, a powerful 2D layout system.</p>
+                        <a href="#">Read more</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://via.placeholder.com/400x200" alt="Article Image">
+                    <div class="card-content">
+                        <h3>Flexbox for Modern Layouts</h3>
+                        <p>Discover how Flexbox can help you create flexible and responsive 1D layouts.</p>
+                        <a href="#">Read more</a>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <h3>Sidebar Content</h3>
+            <p>This sidebar demonstrates how content can be repositioned based on screen size.</p>
+            <ul>
+                <li>Mobile: Below main content</li>
+                <li>Tablet: Next to main content</li>
+                <li>Desktop: Optimized layout</li>
+            </ul>
+        </aside>
+
+        <section class="features">
+            <h2>Our Features</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Responsive Design</h3>
+                        <p>Our layouts adapt seamlessly to all screen sizes and devices.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Modern Techniques</h3>
+                        <p>We use the latest CSS features like Flexbox and Grid for optimal layouts.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Performance Focused</h3>
+                        <p>Our code is optimized for fast loading and smooth interactions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Responsive Layout Demo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --text-light: #fff;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --border-radius: 4px;
+    --shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+}
+
+/* Header Styles */
+header {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Navigation - Using Flexbox */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-md);
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Main Layout - Using CSS Grid */
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "hero"
+        "main"
+        "sidebar"
+        "features";
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: var(--spacing-lg) auto;
+    padding: 0 var(--spacing-md);
+}
+
+.hero {
+    grid-area: hero;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.hero h1 {
+    margin-bottom: var(--spacing-md);
+}
+
+main {
+    grid-area: main;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: var(--light-color);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.features {
+    grid-area: features;
+}
+
+/* Cards Section - Using Flexbox */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.card {
+    flex: 1 1 300px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: var(--spacing-md);
+}
+
+.card h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: var(--spacing-lg);
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablet View */
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: 
+            "hero hero"
+            "main sidebar"
+            "features features";
+    }
+    
+    .hero {
+        text-align: left;
+    }
+}
+
+/* Desktop View */
+@media (min-width: 1024px) {
+    .container {
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas: 
+            "hero hero"
+            "main sidebar"
+            "features features";
+    }
+    
+    .cards {
+        gap: var(--spacing-lg);
+    }
+    
+    .card {
+        flex: 1 1 250px;
+    }
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 767px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--secondary-color);
+        padding: var(--spacing-md);
+        z-index: 100;
+    }
+    
+    nav ul.show {
+        display: flex;
+    }
+    
+    .hero {
+        padding: var(--spacing-md);
+    }
+    
+    .card {
+        flex: 1 1 100%;
+    }
+}
